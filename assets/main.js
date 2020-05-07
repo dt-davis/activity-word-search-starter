@@ -8,9 +8,19 @@
 // TODO 1: Use querySelector to assign EACH of the above 
 // elements to a variable, just like this:
 let searchButton = document.querySelector('#search-button')
+let textBox = document.querySelector('#textbox')
+const sentence = document.querySelector('#sentence')
+let searchResult = document.querySelector('#search-results')
 
+console.log(textBox)
 searchButton.addEventListener('click', function () {
- 
+  if ((sentence.innerHTML).includes(textBox.value)) {
+    console.log(textBox.value)
+    searchResult.innerHTML = (textBox.value) + ' is within the document'
+  }else {
+    console.log(textBox.value)
+    searchResult.innerHTML = (textBox.value) + ' is not in the document'
+  }
   // TODO 2: Write an IF statement which determines whether
   // the user-supplied string from #textbox is included in
   // the #sentence string.
@@ -35,7 +45,7 @@ searchButton.addEventListener('click', function () {
 
 })
 
-// STRETCH GOALS (easiest to hardest):
+// STRETCH GOALS (easiest to hardest):                
 //
 //  • Customize the CSS to your liking.
 //  • Use .trim() to remove unnecessary whitespace from the
